@@ -1,0 +1,10 @@
+---
+  - name: install nginx application in specific namespace
+    hosts: kubem
+    tasks:
+      - name: create a namespace
+        community.kubernetes.k8s:
+          name: nginx
+          kind: Namespace
+          api_version: v1
+          state: present
